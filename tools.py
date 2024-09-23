@@ -445,7 +445,7 @@ def answer_query(user_input):
     }
     
     json_prompt = json.dumps(prompt)
-    response = bedrock_runtime.invoke_model(body=json_prompt, modelId="anthropic.claude-3-sonnet-20240229-v1:0",
+    response = bedrock_runtime.invoke_model(body=json_prompt, modelId="anthropic.claude-3-5-sonnet-20240620-v1:0",
                                             accept="application/json", contentType="application/json")
     response_body = json.loads(response.get('body').read())
     answer = response_body['content'][0]['text']
